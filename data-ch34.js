@@ -237,3 +237,49 @@ QUESTION_BANK.push({
   answer: `证明成立，$f_+'(0)=A$（证明过程见解析）.`,
   analysis: `【证明】根据右导数的定义，我们需要计算极限 $f_+'(0)=\\lim\\limits_{x\\to 0^+}\\dfrac{f(x)-f(0)}{x}$.<br>因为函数 $f(x)$ 在 $x=0$ 处连续，所以 $\\lim\\limits_{x\\to 0^+}f(x)=f(0)$，即分子 $\\lim\\limits_{x\\to 0^+}\\left[f(x)-f(0)\\right]=0$. 因此所求该极限属于标准的“$\\dfrac{0}{0}$”型未定式极限.<br>又由题设知，$f(x)$ 在 $(0,\\delta)\\,(\\delta>0)$ 内可导，且导数极限 $\\lim\\limits_{x\\to 0^+}f'(x)=A$ 存在，这完全满足洛必达法则的三个使用条件.<br>于是根据导数定义与洛必达法则，有$$f_+'(0)=\\lim\\limits_{x\\to 0^+}\\frac{f(x)-f(0)}{x}=\\lim\\limits_{x\\to 0^+}f'(x)=A,$$得证.`
 });
+QUESTION_BANK.push({
+  id: 'c3q14',
+  chapter: 'ch3',
+  no: 14,
+  type: 'open',
+  difficulty: 2,
+  tag: '经典题',
+  points: ['负无穷极限', '变量替换', '绝对值处理'],
+  stem: `（经典题）计算极限：$\\lim\\limits_{x\\to -\\infty}\\dfrac{\\sqrt{4x^{2}+x-1}+x+1}{\\sqrt{x^{2}+\\sin x}}$`,
+  answer: `$1$`,
+  analysis: `令 $x=-t$，则当 $x\\to -\\infty$ 时 $t\\to +\\infty$，于是<br>原式 $=\\lim\\limits_{t\\to +\\infty}\\dfrac{\\sqrt{4t^{2}-t-1}-t+1}{\\sqrt{t^{2}-\\sin t}}$.<br>当 $t\\to +\\infty$ 时，$\\sqrt{4t^{2}-t-1}\\sim 2t$，$-t+1\\sim -t$，$\\sqrt{t^{2}-\\sin t}\\sim t$，<br>注意 $\\sqrt{4t^{2}}=2|t|=2t$（$t>0$），$\\sqrt{t^{2}}=|t|=t$（$t>0$），<br>所以原式 $=\\lim\\limits_{t\\to +\\infty}\\dfrac{2t-t}{t}=1$.<br><br>【易错提醒】若错误地将 $\\sqrt{4t^{2}}$ 写成 $-2t$ 或将分母写成 $-t$，会得到 $-2$ 等错误答案. 关键在于 $\\sqrt{a^{2}}=|a|$，当 $t>0$ 时 $\\sqrt{t^{2}}=t$，而非 $-t$.`
+});
+QUESTION_BANK.push({
+  id: 'c3q15',
+  chapter: 'ch3',
+  no: 15,
+  type: 'open',
+  difficulty: 2,
+  points: ['有理化', '补项法', '等价无穷小'],
+  stem: `计算极限：$\\lim\\limits_{x\\to 0}\\dfrac{\\sqrt{1+x\\sin x}-\\cos x}{x^{2}}$`,
+  answer: `$1$`,
+  analysis: `方法一（有理化）：分子有理化，乘以共轭表达式 $\\sqrt{1+x\\sin x}+\\cos x$，<br>原式 $=\\lim\\limits_{x\\to 0}\\dfrac{(1+x\\sin x)-\\cos^{2}x}{x^{2}\\cdot(\\sqrt{1+x\\sin x}+\\cos x)}$<br>$=\\lim\\limits_{x\\to 0}\\dfrac{x\\sin x+\\sin^{2}x}{x^{2}\\cdot 2}$（因为 $\\sqrt{1+0}+\\cos 0=2\\neq 0$）<br>$=\\dfrac{1}{2}\\left(\\lim\\limits_{x\\to 0}\\dfrac{x\\sin x}{x^{2}}+\\lim\\limits_{x\\to 0}\\dfrac{\\sin^{2}x}{x^{2}}\\right)$<br>$=\\dfrac{1}{2}(1+1)=1$.<br><br>方法二（补项法）：在分子中加减 $1$，<br>原式 $=\\lim\\limits_{x\\to 0}\\dfrac{\\sqrt{1+x\\sin x}-1}{x^{2}}+\\lim\\limits_{x\\to 0}\\dfrac{1-\\cos x}{x^{2}}$<br>$=\\lim\\limits_{x\\to 0}\\dfrac{(1+x\\sin x)^{\\frac{1}{2}}-1}{x^{2}}+\\lim\\limits_{x\\to 0}\\dfrac{\\frac{1}{2}x^{2}}{x^{2}}$<br>$=\\lim\\limits_{x\\to 0}\\dfrac{\\frac{1}{2}x\\sin x}{x^{2}}+\\dfrac{1}{2}$（因为 $(1+u)^{\\frac{1}{2}}-1\\sim\\frac{1}{2}u$，$x\\sin x\\sim x^{2}$）<br>$=\\dfrac{1}{2}+\\dfrac{1}{2}=1$.`
+});
+QUESTION_BANK.push({
+  id: 'c3q16',
+  chapter: 'ch3',
+  no: 16,
+  type: 'open',
+  difficulty: 3,
+  tag: '经典题',
+  points: ['泰勒展开', '补项法', '等价无穷小'],
+  stem: `计算极限：$\\lim\\limits_{x\\to 0}\\dfrac{\\sin(\\tan x)-\\tan(\\sin x)}{x^{3}}$`,
+  answer: `$0$`,
+  analysis: `分析：当 $x\\to 0$ 时，$\\sin x-x\\sim -\\dfrac{1}{6}x^{3}$，$\\tan x-x\\sim \\dfrac{1}{3}x^{3}$.<br><br>方法一（泰勒展开）：<br>当 $\\square\\to 0$ 时，$\\sin\\square=\\square-\\dfrac{1}{6}\\square^{3}+o(\\square^{3})$，$\\tan\\square=\\square+\\dfrac{1}{3}\\square^{3}+o(\\square^{3})$.<br>于是<br>$\\sin(\\tan x)=\\tan x-\\dfrac{1}{6}\\tan^{3}x+o(x^{3})$，<br>$\\tan(\\sin x)=\\sin x+\\dfrac{1}{3}\\sin^{3}x+o(x^{3})$.<br>原式 $=\\lim\\limits_{x\\to 0}\\dfrac{\\tan x-\\sin x-\\frac{1}{6}\\tan^{3}x-\\frac{1}{3}\\sin^{3}x+o(x^{3})}{x^{3}}$<br>$=\\lim\\limits_{x\\to 0}\\dfrac{\\tan x-\\sin x}{x^{3}}-\\dfrac{1}{6}-\\dfrac{1}{3}+0$<br>$=\\dfrac{1}{2}-\\dfrac{1}{6}-\\dfrac{1}{3}=0$（因为 $\\tan x-\\sin x\\sim\\dfrac{1}{2}x^{3}$）.<br><br>方法二（补项法）：在分子中加减 $\\tan x$ 与 $\\sin x$，<br>$\\sin(\\tan x)-\\tan(\\sin x)=[\\sin(\\tan x)-\\tan x]-[\\tan(\\sin x)-\\sin x]+[\\tan x-\\sin x]$<br>原式 $=\\lim\\limits_{x\\to 0}\\dfrac{\\sin(\\tan x)-\\tan x}{x^{3}}-\\lim\\limits_{x\\to 0}\\dfrac{\\tan(\\sin x)-\\sin x}{x^{3}}+\\lim\\limits_{x\\to 0}\\dfrac{\\tan x-\\sin x}{x^{3}}$<br>$=-\\dfrac{1}{6}-\\dfrac{1}{3}+\\dfrac{1}{2}=0$.<br>（其中 $\\sin(\\tan x)-\\tan x\\sim -\\dfrac{1}{6}\\tan^{3}x\\sim -\\dfrac{1}{6}x^{3}$，$\\tan(\\sin x)-\\sin x\\sim\\dfrac{1}{3}\\sin^{3}x\\sim\\dfrac{1}{3}x^{3}$，$\\tan x-\\sin x\\sim\\dfrac{1}{2}x^{3}$）`
+});
+QUESTION_BANK.push({
+  id: 'c3q17',
+  chapter: 'ch3',
+  no: 17,
+  type: 'open',
+  difficulty: 2,
+  points: ['补项法', '等价无穷小'],
+  stem: `计算极限：$\\lim\\limits_{x\\to 0}\\left[\\dfrac{1}{x}-\\dfrac{\\ln(1+x)}{x\\sin x}\\right]$`,
+  answer: `$\\dfrac{1}{2}$`,
+  analysis: `由于 $x\\sin x\\sim x^{2}$，通分后<br>原式 $=\\lim\\limits_{x\\to 0}\\dfrac{\\sin x-\\ln(1+x)}{x\\sin x}=\\lim\\limits_{x\\to 0}\\dfrac{\\sin x-\\ln(1+x)}{x^{2}}$.<br>用补项法，将分子拆为 $[x-\\ln(1+x)]+[\\sin x-x]$，<br>原式 $=\\lim\\limits_{x\\to 0}\\dfrac{x-\\ln(1+x)}{x^{2}}+\\lim\\limits_{x\\to 0}\\dfrac{\\sin x-x}{x^{2}}$.<br>其中 $x-\\ln(1+x)\\sim\\dfrac{1}{2}x^{2}$，故第一项 $=\\dfrac{1}{2}$；<br>$\\sin x-x\\sim -\\dfrac{1}{6}x^{3}$，故 $\\dfrac{\\sin x-x}{x^{2}}\\to 0$，第二项 $=0$.<br>所以原式 $=\\dfrac{1}{2}+0=\\dfrac{1}{2}$.`
+});

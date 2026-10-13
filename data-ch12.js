@@ -233,5 +233,9 @@ const FORMULA_BANK = [
 { id: 'f31', cat: '极限结论', front: `$1^{\\infty}$ 型速算公式`, back: `若 $\\lim u=1,\\lim v=\\infty$，则 $\\lim u^{v}=e^{\\lim v(u-1)}$` },
 { id: 'f32', cat: '极限结论', front: `单侧导数极限定理`, back: `$f$ 在 $x_0$ 连续、去心邻域可导且 $\\lim\\limits_{x\\to x_0^{+}}f'(x)=A$，则 $f_{+}'(x_0)=A$` },
 { id: 'f33', cat: '极限结论', front: `可导的充要条件`, back: `$f'(x_0)$ 存在 $\\iff f_{+}'(x_0)=f_{-}'(x_0)$ 均存在且相等` },
-{ id: 'f34', cat: '极限结论', front: `高阶无穷小运算：$f=o(g)$ 时 $f+g\\sim\\;?$`, back: `$f+g\\sim g$，且 $f\\cdot g=o(g^{2})$` }
+{ id: 'f34', cat: '极限结论', front: `高阶无穷小运算：$f=o(g)$ 时 $f+g\\sim\\;?$`, back: `$f+g\\sim g$，且 $f\\cdot g=o(g^{2})$` },
+/* --- 极限运算规则 --- */
+{ id: 'f35', cat: '极限运算', front: `极限四则运算法则（加减）`, back: `$\\lim[f(x)\\pm g(x)]=\\lim f(x)\\pm\\lim g(x)$<br>前提：$\\lim f(x)$ 与 $\\lim g(x)$ 均存在` },
+{ id: 'f36', cat: '极限运算', front: `极限四则运算法则（乘除）`, back: `$\\lim[f(x)\\cdot g(x)]=\\lim f(x)\\cdot\\lim g(x)$；$\\lim\\dfrac{f(x)}{g(x)}=\\dfrac{\\lim f(x)}{\\lim g(x)}$（$\\lim g(x)\\neq 0$）<br>前提：各极限均存在` },
+{ id: 'f37', cat: '极限运算', front: `什么时候才能"拆"极限？`, back: `各部分极限均存在才能拆！<br>不存在则不能用四则运算法则分离` }
 ];
